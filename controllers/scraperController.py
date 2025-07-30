@@ -1,8 +1,8 @@
 import requests
 import logging
 from bs4 import BeautifulSoup
-from Products.product import ScrapedProduct
-from Helpers.utils import get_scrapeops_url
+from products.product import ScrapedProduct
+from helpers.utils import get_scrapeops_url
 
 
 logger= logging.getLogger(__name__)
@@ -18,6 +18,7 @@ def search_products( product_name: str, page_number: int=1, location:str="us", r
             logger.info ( f" Fetching: {search_url}")
             response= requests.get(search_url)
             if response.status_code!=200:
+                logger.error(f"Response content for {response.status_code}: {response.text[:500]}")
                 raise Exception (f"Status code: { response.status_code}")
             
             logger.info( "Successfull fetched page")
@@ -76,7 +77,7 @@ def search_products( product_name: str, page_number: int=1, location:str="us", r
             attempts+=1
     
     if not success:
-        logger.error(" scraping failed")
+        logger.error("scraping failed")
     
 
     return scraped_products

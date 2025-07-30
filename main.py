@@ -1,5 +1,5 @@
-from Controllers.scraper_controller import search_products
-from Pipelines.data_pipeline import DataPipeline
+from controllers.scraperController import search_products
+from pipelines.dataPipeline import DataPipeline
 
 
 PRODUCTS = ["MAC"]

@@ -1,4 +1,4 @@
-from Helpers.config import API_KEY
+from helpers.config import API_KEY
 from urllib.parse import urlencode
 
 def get_scrapeops_url (url, location):
