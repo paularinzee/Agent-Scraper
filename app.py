@@ -3,7 +3,7 @@ import pandas as pd
 import os
 from controllers.scraperController import search_products
 from pipelines.dataPipeline import DataPipeline
-# from Agents.Agent_feedback import recommend_best_deal_with_ai
+from agents.agentFeedback import recommend_best_deal_with_ai
 
 # 🧱 Page setup
 st.set_page_config(page_title="Amazon Scraper", page_icon="🛍️", layout="centered")
